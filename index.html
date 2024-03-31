@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Supertech Softwares & Solutions</title>
+    <link rel="stylesheet" href="style.css">
+    <meta name="theme-color" content="#673AB7">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+
+    <div class="w-100 col-view v-center">
+
+        <div class="w-100 col-view v-center bg-primary">
+            <div class="col-view v-center pd-15">
+              <h1 class="cl-white ft-sz-25 company_name_tv"></h1>
+              <p class="cl-l-white ft-sz-14 mg-t-5">Best & Affordable Softwares</p>
+              
+              <div class="row-view v-center mg-t-15">
+                <a class="txt-deco-n v-center pd-10 br-5 cl-white bg-l-white social_yt_link"><i class='bx bxl-youtube ft-sz-20'></i></a>
+                <a class="txt-deco-n v-center pd-10 br-5 cl-white bg-l-white mg-l-10 social_telegram_link"><i class='bx bxl-telegram ft-sz-20'></i></a>
+              </div>
+            </div>
+            
+           <svg id="wave" style="transform:rotate(0deg); transition: 0.3s; margin-top: 15px;" viewBox="0 0 1440 220" version="1.1" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="sw-gradient-0" x1="0" x2="0" y1="1" y2="0"><stop stop-color="rgba(255, 255, 255, 1)" offset="0%"></stop><stop stop-color="rgba(255, 255, 255, 1)" offset="100%"></stop></linearGradient></defs><path style="transform:translate(0, 0px); opacity:1" fill="url(#sw-gradient-0)" d="M0,88L30,80.7C60,73,120,59,180,66C240,73,300,103,360,95.3C420,88,480,44,540,36.7C600,29,660,59,720,58.7C780,59,840,29,900,22C960,15,1020,29,1080,55C1140,81,1200,117,1260,128.3C1320,139,1380,125,1440,117.3C1500,110,1560,110,1620,95.3C1680,81,1740,51,1800,55C1860,59,1920,95,1980,117.3C2040,139,2100,147,2160,154C2220,161,2280,169,2340,161.3C2400,154,2460,132,2520,121C2580,110,2640,110,2700,102.7C2760,95,2820,81,2880,88C2940,95,3000,125,3060,139.3C3120,154,3180,154,3240,146.7C3300,139,3360,125,3420,110C3480,95,3540,81,3600,77C3660,73,3720,81,3780,77C3840,73,3900,59,3960,66C4020,73,4080,103,4140,117.3C4200,132,4260,132,4290,132L4320,132L4320,220L4290,220C4260,220,4200,220,4140,220C4080,220,4020,220,3960,220C3900,220,3840,220,3780,220C3720,220,3660,220,3600,220C3540,220,3480,220,3420,220C3360,220,3300,220,3240,220C3180,220,3120,220,3060,220C3000,220,2940,220,2880,220C2820,220,2760,220,2700,220C2640,220,2580,220,2520,220C2460,220,2400,220,2340,220C2280,220,2220,220,2160,220C2100,220,2040,220,1980,220C1920,220,1860,220,1800,220C1740,220,1680,220,1620,220C1560,220,1500,220,1440,220C1380,220,1320,220,1260,220C1200,220,1140,220,1080,220C1020,220,960,220,900,220C840,220,780,220,720,220C660,220,600,220,540,220C480,220,420,220,360,220C300,220,240,220,180,220C120,220,60,220,30,220L0,220Z"></path></svg>
+        </div>
+        
+        <div class="min-h-100vh w-100 v-center mg-t--10 bg-white">
+          <div class="pd-15 res-wth res-g-v-3 g-c-gap-10 g-r-gap-20 products_view"></div>
+        </div>
+
+        <div class="w-100 col-view v-center pd-5-15 mg-t-5em mg-b-10">
+            <div class="v-center ft-sz-16 pd-10-15 cl-white br-5 bg-green" onclick="messageUs(false)">
+                <i class='bx bxl-whatsapp'></i>&nbsp;Contact Us
+            </div>
+            
+            <p class="w-100 v-center ft-sz-18 mg-t-10">Made ❤️ with India</p>
+            
+            <p class="txt-a-center ft-sz-12 mg-t-10">Without our permissions resale is not allowed. @copyright reserved</p>
+        </div> 
+
+    </div>
+    
+    <script>
+    
+      let whatsappNumber = "";
+      let products_view = document.querySelector(".products_view");
+      let company_name_tv = document.querySelector(".company_name_tv");
+      let social_yt_link = document.querySelector(".social_yt_link");
+      let social_telegram_link = document.querySelector(".social_telegram_link");
+
+      async function loadProductsData() {
+        const response = await fetch("products-data.json ");
+        const productsData = await response.json();
+        whatsappNumber = productsData.whatsappNumber;
+        company_name_tv.innerHTML = productsData.companyName;
+        
+        social_yt_link.href = productsData.socialyoutubeLink;
+        social_telegram_link.href = productsData.socialTelegramLink;
+        
+        document.title = productsData.companyName;
+
+         let tempHTML = "";
+         for(let i = 0; i < productsData.products.length; i++) {
+           let obj = productsData.products[i];
+           
+
+           tempHTML += 
+           `<div class="cursor-pointer br-5 bx-shadow-2">
+                <img class="w-100 min-h-80 br-5" src="${obj.images[0].image}" onclick="window.location.href='view-product.html?product=${obj.productid}'"/>
+                <div class="pd-10 mg-t-5">
+                  <p onclick="window.location.href='view-product.html?product=${obj.productid}'">${obj.title}</p>
+
+                  <div class="row-view mg-t-5">
+                    <p class="ft-sz-12">By ${productsData.companyName}</p>
+                    <p class="ft-sz-12 cl-secondary mg-l-10">${obj.sales} Sales</p>
+                  </div>
+                  
+                  <div class="row-view sb-view mg-t-10">
+                    <p class="ft-sz-16">₹${obj.price}</p>
+                    <a class="txt-deco-n ft-sz-16 cl-white pd-5-15 br-5 bg-red" href="${obj.softwareDemoLink}" target="_blank">Live View&nbsp;<i class='bx bx-show-alt'></i></a>
+                  </div>
+                </div>
+            </div>`;
+           
+         }
+
+         products_view.innerHTML = tempHTML; 
+      }
+
+      loadProductsData();
+      
+      function messageUs(isBuy){
+          if(isBuy && whatsappNumber!=""){
+              window.location.href = "https://api.whatsapp.com/send?phone="+whatsappNumber+"&text=I want to buy this software: \n"+window.location.href;
+          }else if(whatsappNumber!=""){
+               window.location.href = "https://api.whatsapp.com/send?phone="+whatsappNumber+"&text=Hello 👋 I need your help!"; 
+          }
+      }
+
+    </script>
+
+</body>
+</html>
