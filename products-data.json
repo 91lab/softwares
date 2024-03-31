@@ -1,18 +1,18 @@
 {
     "products": [
     {
-      "productid": "2F365NLKR52",
-      "title": "Indra-Wordpress Library Theme | Best selling softwares",
-      "sales": "74",
-      "price": "2000",
+      "productid": "45012E54S1",
+      "title": "Colour Prediction - 1 Full Software with App + Admin Panel",
+      "sales": "78",
+      "price": "5500",
       "description": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.",
-      "technologyused": "Html,Css,Javascript,Php,NodeJs",
+      "technologyused": "Html,css,Javascript,PHP",
       "ytVideoLink": "",
-      "softwareDemoLink": "https://amanda.host",
-      "controlPanelLink": "https://api.vipclub.click/admin/?access-code=3687",
+      "softwareDemoLink": "https://bgmall.in/",
+      "controlPanelLink": "https://api.bgmall.in/admin",
       "images": [
         {
-          "image" : "https://codecanyon.img.customer.envatousercontent.com/files/442421030/logo-filebird.png?auto=compress%2Cformat&q=80&fit=crop&crop=top&max-h=8000&max-w=590&s=e35466814a34afd019d3b96ebf455f5e"
+          "image" : "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgL-xQ2ze0tDGQRMwB_Nz0LKmJRT8FyuYR3_Z6UTOv9wJeQdtfQGSA6bsd3PVXfF_BfsBRB0OmNkUq9VNnwROmLi8C7_NRbCAfzATfN9ypVJ3edmi6pR8RZFTH8Y_UAKPS1tOzrBpEDfCNAgi_kkO328Qzh6OjSba90-1c_zd7ivPMCh9CbsiFK3rqs1Bo/s320/20231207854151.png"
         }
       ],
       
@@ -39,11 +39,11 @@
        ],
       
       "features": [
-          {"detail" : "OTP (One Time Password) is available."},
-          {"detail" : "Automatic & Manual Payments Gateway."},
-          {"detail" : "3 Layers Security available."},
-          {"detail" : "Build Template System Available."},
-          {"detail" : "Almost 90% you can control your website."}
+          {"detail" : "OTP System (One Time Password) is available."},
+          {"detail" : "Automatic & Manual Payments Gateway is available."},
+          {"detail" : "3 Layers Security is available."},
+          {"detail" : "Build Template System is available."},
+          {"detail" : "With Admin Panel you can control almost everything."}
         ]
      },
      {
